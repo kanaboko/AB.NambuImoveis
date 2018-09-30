@@ -1,0 +1,63 @@
+﻿@model IEnumerable<AB.NambuImoveis.Application.ViewModels.ImovelTipoViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Descricao)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImovelDetalheTipos)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.ImovelDetalheTipos.ToList()[0].ImovelDetalheBases)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descricao)
+            </td>
+        </tr>
+        foreach (var detalheTipo in item.ImovelDetalheTipos)
+        {
+            <tr>
+                <td></td>
+                <td>
+                    @Html.DisplayFor(modelDetalhe => detalheTipo.Descricao) <br />
+                </td>
+                <td>
+                    @foreach (var detalheBase in detalheTipo.ImovelDetalheBases)
+                    {
+
+                        @Html.DisplayFor(modelDetalheBase => detalheBase.Descricao) <br />
+
+                    }
+                </td>
+            </tr>
+        }
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+
+    }
+
+</table>

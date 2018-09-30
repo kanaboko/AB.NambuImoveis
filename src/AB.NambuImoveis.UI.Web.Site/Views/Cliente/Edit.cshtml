@@ -1,0 +1,185 @@
+﻿@model AB.NambuImoveis.Application.ViewModels.PessoaViewModel
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<div id="myModal" class="modal fade in">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div id="myModalContent"></div>
+        </div>
+    </div>
+</div>
+
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+        <h4>PessoaViewModel</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.HiddenFor(model => model.Id)
+
+        @{
+            switch (Model.TipoPessoa)
+            {
+                case AB.NambuImoveis.Application.ViewModels.Enums.TipoPessoaViewModel.PessoaFisica:
+                    @Html.HiddenFor(model => model.PessoaFisica.Id);
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Nome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Sobrenome, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Sobrenome, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Sobrenome, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.RG, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.RG, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.RG, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.CPF, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.CPF, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.CPF, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Sexo, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Sexo, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.EstadoCivil, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EnumDropDownListFor(model => model.PessoaFisica.EstadoCivil, "", new { htmlAttributes = new { @class = "form-control dropdown" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.EstadoCivil, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Naturalidade, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Naturalidade, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Naturalidade, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Nacionalida, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Nacionalida, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Nacionalida, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Profissao, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Profissao, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Profissao, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Email, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Email, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.Renda, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.Renda, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.Renda, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaFisica.DataNascimento, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaFisica.DataNascimento, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaFisica.DataNascimento, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                    break;
+                case AB.NambuImoveis.Application.ViewModels.Enums.TipoPessoaViewModel.PessoaJuridica:
+                    @Html.HiddenFor(model => model.PessoaJuridica.Id);
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaJuridica.RazaoSocial, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaJuridica.RazaoSocial, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaJuridica.RazaoSocial, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaJuridica.CNPJ, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaJuridica.CNPJ, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaJuridica.CNPJ, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.PessoaJuridica.IE, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.PessoaJuridica.IE, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.PessoaJuridica.IE, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+                    
+                    break;
+                default:
+                    break;
+            }
+            <div id="replace">
+                @switch (Model.TipoPessoa)
+                {
+                    case AB.NambuImoveis.Application.ViewModels.Enums.TipoPessoaViewModel.PessoaFisica:
+                        @Html.Partial("_listEndereco", Model.PessoaFisica.EnderecoList);
+                        break;
+                    case AB.NambuImoveis.Application.ViewModels.Enums.TipoPessoaViewModel.PessoaJuridica:
+                        @Html.Partial("_listEndereco", Model.PessoaJuridica.EnderecoList);
+                        break;
+                    default:
+                        break;
+                }
+            </div>
+        }
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Save" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

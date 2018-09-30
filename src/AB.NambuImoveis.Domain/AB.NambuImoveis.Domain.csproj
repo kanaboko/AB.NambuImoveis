@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9812ABBD-82B4-4B8D-ADB1-9C988CA1C9BE}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AB.NambuImoveis.Domain</RootNamespace>
+    <AssemblyName>AB.NambuImoveis.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Interfaces\IImovelDetalheBaseRepository.cs" />
+    <Compile Include="Interfaces\IEnderecoRepository.cs" />
+    <Compile Include="Interfaces\IImovelDetalheBaseValorRepository.cs" />
+    <Compile Include="Interfaces\IImovelDetalheTipoRepository.cs" />
+    <Compile Include="Interfaces\IImovelDetalheTipo_DetalheBaseRepository.cs" />
+    <Compile Include="Interfaces\IImovelFinalidadeRepository.cs" />
+    <Compile Include="Interfaces\IImovelFinalidade_ImovelTipoRepository.cs" />
+    <Compile Include="Interfaces\IImovelRepository.cs" />
+    <Compile Include="Interfaces\IImovelTipo_DetalheTipo_DetalheBaseRepository.cs" />
+    <Compile Include="Interfaces\IImovelTipoRepository.cs" />
+    <Compile Include="Interfaces\IImovel_ProprietarioRepository.cs" />
+    <Compile Include="Interfaces\IPessoaFisicaRepository.cs" />
+    <Compile Include="Interfaces\IPessoaFisica_EnderecoRepository.cs" />
+    <Compile Include="Interfaces\IPessoaJuridicaRepository.cs" />
+    <Compile Include="Interfaces\IPessoaJuridica_EnderecoRepository.cs" />
+    <Compile Include="Interfaces\IPessoaRepository.cs" />
+    <Compile Include="Interfaces\IProprietarioRepository.cs" />
+    <Compile Include="Interfaces\IRepository.cs" />
+    <Compile Include="Interfaces\IRepositoryWrite.cs" />
+    <Compile Include="Interfaces\Services\IClienteService.cs" />
+    <Compile Include="Interfaces\Services\IImovelDetalheBaseService.cs" />
+    <Compile Include="Interfaces\Services\IImovelDetalheBaseValorService.cs" />
+    <Compile Include="Interfaces\Services\IImovelDetalheTipoService.cs" />
+    <Compile Include="Interfaces\Services\IImovelFinalidadeService.cs" />
+    <Compile Include="Interfaces\Services\IImovelService.cs" />
+    <Compile Include="Interfaces\Services\IImovelTipoService.cs" />
+    <Compile Include="Models\Arquivo.cs" />
+    <Compile Include="Models\Enums\Enum_ImovelFinalidade.cs" />
+    <Compile Include="Models\ImovelDetalheBaseValor.cs" />
+    <Compile Include="Models\ImovelDetalheTipo.cs" />
+    <Compile Include="Models\Enums\TipoDados.cs" />
+    <Compile Include="Models\Enums\CondicaoIptu.cs" />
+    <Compile Include="Models\Enums\EstadoCivil.cs" />
+    <Compile Include="Models\Imovel.cs" />
+    <Compile Include="Models\Enums\PadraoImovel.cs" />
+    <Compile Include="Models\Enums\PadraoLocalizacao.cs" />
+    <Compile Include="Models\Enums\Permuta.cs" />
+    <Compile Include="Models\ImovelDetalheBase.cs" />
+    <Compile Include="Models\ImovelDetalheTipo_DetalheBase.cs" />
+    <Compile Include="Models\ImovelFinalidade.cs" />
+    <Compile Include="Models\ImovelFinalidade_ImovelTipo.cs" />
+    <Compile Include="Models\ImovelTipo_DetalheTipo_DetalheBase.cs" />
+    <Compile Include="Models\ImovelTipo.cs" />
+    <Compile Include="Models\Imovel_Proprietario.cs" />
+    <Compile Include="Models\Pessoa.cs" />
+    <Compile Include="Models\PessoaFisica.cs" />
+    <Compile Include="Models\Endereco.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\PessoaFisica_Endereco.cs" />
+    <Compile Include="Models\PessoaJuridica.cs" />
+    <Compile Include="Models\Enums\SituacaoImovel.cs" />
+    <Compile Include="Models\Enums\Enum_ImovelStatus.cs" />
+    <Compile Include="Models\Enums\TipoArquivo.cs" />
+    <Compile Include="Models\Enums\TipoLocacao.cs" />
+    <Compile Include="Models\Enums\TipoPessoa.cs" />
+    <Compile Include="Models\PessoaJuridica_Endereco.cs" />
+    <Compile Include="Models\Proprietario.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\ClienteService.cs" />
+    <Compile Include="Services\ImovelDetalheBaseService.cs" />
+    <Compile Include="Services\ImovelDetalheBaseValorService.cs" />
+    <Compile Include="Services\ImovelDetalheTipoService.cs" />
+    <Compile Include="Services\ImovelFinalidadeService.cs" />
+    <Compile Include="Services\ImovelTipoService.cs" />
+    <Compile Include="Services\ImovelService.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ValueObjects\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

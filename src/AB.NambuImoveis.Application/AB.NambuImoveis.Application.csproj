@@ -1,0 +1,114 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C442FC8-86D3-40E4-A7C0-A698B9B48D3C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AB.NambuImoveis.Application</RootNamespace>
+    <AssemblyName>AB.NambuImoveis.Application</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AutoMapper, Version=6.2.2.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\AutoMapper.6.2.2\lib\net45\AutoMapper.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AutoMapper\AutoMapperConfig.cs" />
+    <Compile Include="AutoMapper\DomainToViewModelMappingProfile.cs" />
+    <Compile Include="AutoMapper\ViewModelToDomainMappingProfile.cs" />
+    <Compile Include="Interfaces\IClienteAppService.cs" />
+    <Compile Include="Interfaces\IImovelAppService.cs" />
+    <Compile Include="Interfaces\IImovelDetalheBaseAppService.cs" />
+    <Compile Include="Interfaces\IImovelDetalheBaseValorAppService.cs" />
+    <Compile Include="Interfaces\IImovelDetalheTipoAppService.cs" />
+    <Compile Include="Interfaces\IImovelFinalidadeAppService.cs" />
+    <Compile Include="Interfaces\IImovelTipoAppService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\AppService.cs" />
+    <Compile Include="Service\ClienteAppService.cs" />
+    <Compile Include="Service\ImovelAppService.cs" />
+    <Compile Include="Service\ImovelDetalheBaseAppService.cs" />
+    <Compile Include="Service\ImovelDetalheBaseValorAppService.cs" />
+    <Compile Include="Service\ImovelDetalheTipoAppService.cs" />
+    <Compile Include="Service\ImovelFinalidadeAppService.cs" />
+    <Compile Include="Service\ImovelTipoAppService.cs" />
+    <Compile Include="ViewModels\ClienteViewModel.cs" />
+    <Compile Include="ViewModels\EnderecoViewModel.cs" />
+    <Compile Include="ViewModels\Enums\CondicaoIptu.cs" />
+    <Compile Include="ViewModels\Enums\Enum_ImovelFinalidade.cs" />
+    <Compile Include="ViewModels\Enums\Enum_ImovelStatus.cs" />
+    <Compile Include="ViewModels\Enums\EstadoCivilViewModel.cs" />
+    <Compile Include="ViewModels\Enums\PadraoImovel.cs" />
+    <Compile Include="ViewModels\Enums\PadraoLocalizacao.cs" />
+    <Compile Include="ViewModels\Enums\Permuta.cs" />
+    <Compile Include="ViewModels\Enums\SituacaoImovel.cs" />
+    <Compile Include="ViewModels\Enums\TipoDadosViewModel.cs" />
+    <Compile Include="ViewModels\Enums\TipoLocacao.cs" />
+    <Compile Include="ViewModels\Enums\TipoPessoaViewModel.cs" />
+    <Compile Include="ViewModels\ImovelDetalheBaseAssignedViewModel.cs" />
+    <Compile Include="ViewModels\ImovelDetalheBaseValorViewModel.cs" />
+    <Compile Include="ViewModels\ImovelDetalheBaseViewModel.cs" />
+    <Compile Include="ViewModels\ImovelDetalheTipoAssignedViewModel.cs" />
+    <Compile Include="ViewModels\ImovelDetalheTipoViewModel.cs" />
+    <Compile Include="ViewModels\ImovelFinalidadeViewModel.cs" />
+    <Compile Include="ViewModels\ImovelTipoAssignedViewModel.cs" />
+    <Compile Include="ViewModels\ImovelTipoViewModel.cs" />
+    <Compile Include="ViewModels\ImovelViewModel.cs" />
+    <Compile Include="ViewModels\PessoaFisicaViewModel.cs" />
+    <Compile Include="ViewModels\PessoaJuridicaViewModel.cs" />
+    <Compile Include="ViewModels\PessoaViewModel.cs" />
+    <Compile Include="ViewModels\ProprietarioViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AB.NambuImoveis.Domain\AB.NambuImoveis.Domain.csproj">
+      <Project>{9812ABBD-82B4-4B8D-ADB1-9C988CA1C9BE}</Project>
+      <Name>AB.NambuImoveis.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AB.NambuImoveis.Infra.CrossCutting.MvcFilters\AB.NambuImoveis.Infra.CrossCutting.MvcFilters.csproj">
+      <Project>{90a95ba9-6a21-455b-8139-24b5e194d193}</Project>
+      <Name>AB.NambuImoveis.Infra.CrossCutting.MvcFilters</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\AB.NambuImoveis.Infra.Data\AB.NambuImoveis.Infra.Data.csproj">
+      <Project>{0082934c-8345-4f79-b8de-39da36c2fc82}</Project>
+      <Name>AB.NambuImoveis.Infra.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
